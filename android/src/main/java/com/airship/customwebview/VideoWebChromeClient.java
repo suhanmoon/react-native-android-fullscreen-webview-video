@@ -66,6 +66,10 @@ public class VideoWebChromeClient extends WebChromeClient {
     mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     getRootView().addView(mVideoView, FULLSCREEN_LAYOUT_PARAMS);
 
+    int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN;
+    getRootView().setSystemUiVisibility(uiOptions);
+
     // ((View) mWebView.getRootView()).setVisibility(View.GONE);
     isVideoFullscreen = true;
   }
